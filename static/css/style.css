@@ -1,0 +1,71 @@
+/* Basic styling for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.table-responsive {
+    max-height: 400px;       /* Enables vertical scrolling beyond 400px */
+    max-width: 100%;         /* Limits width to the container */
+    overflow-x: auto;        /* Allows horizontal scrolling */
+    overflow-y: auto;        /* Allows vertical scrolling */
+    border: 1px solid #ddd;  /* Optional: adds a border around the table */
+    padding: 5px;            /* Optional: padding for readability */
+    display: block;          /* Ensures the div is a block element */
+}
+
+.btn-group .btn {
+    margin: 0 5px;
+}
+
+.btn-group .btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,10 @@
+venv/
+app/__pycache__/
+*.pyc
+.dockerignore
+copilot/
+.DS_Store
+#
+.env
+data/
+nginx.conf

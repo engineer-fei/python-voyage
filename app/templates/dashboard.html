@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Data Analytics{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Header Section -->
+    <div class="jumbotron">
+        <h2 class="display-4">Python Voyage - Dashboard</h2>
+        <p class="lead">Explore and visualize data from various sources.</p>
+        <hr class="my-4">
+        <p>Use the buttons below to select a data source.</p>
+    </div>
+
+    <!-- Data Source Selection Buttons -->
+    <div class="btn-group mt-4" role="group" aria-label="Data Source Selection">
+        <a href="/?source=stock_file" class="btn btn-primary">Stock Data</a>
+        <a href="/?source=global_dev_file" class="btn btn-primary">Global Development</a>
+        <a href="/?source=nasa_api" class="btn btn-primary">NASA API</a>
+        <a href="/?source=alpha_api" class="btn btn-primary">Alpha Vantage</a>
+    </div>
+
+    <!-- Data Preview Section -->
+    <h3 class="mt-4">Data Preview</h3>
+    <div class="table-responsive">
+        {{ data_preview | safe }}
+    </div>
+
+    <!-- Visualization Section -->
+    <h3 class="mt-4">Visualization</h3>
+    <div class="visualization-container">
+        {{ visualization_html | safe }}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Data Analytics{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Data Analytics Dashboard</h1>
+        <p class="lead">Explore and visualize data from multiple sources.</p>
+    </div>
+    
+    <div class="btn-group mt-4" role="group" aria-label="Data Source Selection">
+        <a href="/?source=stock_file" class="btn btn-primary">Stock Data</a>
+        <a href="/?source=global_dev_file" class="btn btn-primary">Global Development</a>
+        <a href="/?source=nasa_api" class="btn btn-primary">NASA API</a>
+        <a href="/?source=alpha_api" class="btn btn-primary">Alpha Vantage</a>
+    </div>
+
+    <div class="row">
+        <!-- Data Preview -->
+        <div class="col-md-6">
+            <h3>Data Preview</h3>
+            <div class="table-responsive">
+                {{ data_preview | safe }}
+            </div>
+        </div>
+
+        <!-- Visualization -->
+        <div class="col-md-6">
+            <h3>Visualization</h3>
+            <div class="visualization-container">
+                {{ visualization_html | safe }}
+            </div>
+        </div>
+    </div>
+</div>

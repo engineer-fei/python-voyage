@@ -1,0 +1,25 @@
+#version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #image: 682033504768.dkr.ecr.us-east-1.amazonaws.com/se-fei/python-voyage:latest
+    ports:
+      - "5001:5002" # Expose Gunicorn port internally for Nginx
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf # Mount the Nginx configuration
+    ports:
+      - "80:80" # Expose Nginx on port 80
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+networks:
+  app-network:
